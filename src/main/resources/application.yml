@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  
+logging:
+  level:
+    root: ERROR
+    com.prajjwalburman.twitchservice: DEBUG
+    org.springframework: ERROR
+    
+twitch:
+  clientid: 
+  clientsecret: 
+  rest:
+    helix:
+      games: /helix/games
+      streams: /helix/streams
+    kraken:
+      streamsummary: /kraken/streams/summary
+    outh:
+      appaccesstoken: /oauth2/token
+    
+---
+spring:
+  profiles: local
+  
+service:
+  twitch:
+    api: https://api.twitch.tv
+    id: https://id.twitch.tv
